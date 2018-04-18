@@ -1,0 +1,47 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-2" data-ng-include="'resources/html/partial/menu.html'"></div>
+		<div class="col-sm-1"></div>
+		<div class="col-sm-7">
+			<h1>Dettaglio Ordine</h1>
+			<div class="well bianco centrato">
+				<h2>Riferimenti</h2>
+				<p><span data-ng-show="ordine.riferimento != undefined">Ordine: {{ordine.riferimento}}</span> <span data-ng-show="ordine.nrDocumentoFiscale != undefined">N&deg;Documento fiscale: {{ordine.nrDocumentoFiscale}}</span></p>
+				<h2>Destinatario</h2>
+				<p>Ragione sociale: {{ordine.destinatario.ragioneSociale}}</p>
+				<p>Indirizzo: {{ordine.destinatario.indirizzo}} - {{ordine.destinatario.localita}}</p>
+				<p>CAP: {{ordine.destinatario.cap}} <span data-ng-show="ordine.destinatario.provincia != undefined">( {{ordine.destinatario.provincia}} )</span><span data-ng-show="ordine.destinatario.nazione != undefined"> - {{ordine.destinatario.nazione}}</span></p>
+				<h2>Dati Spedizione</h2>
+				<p>Colli: {{ordine.colli}} peso: {{ordine.peso}} Kg volume: {{ordine.volume}} mc</p>
+				<p><span data-ng-show="ordine.servizio != undefined">Tipo servizio: {{ordine.servizio}}</span></p>
+				<p><span data-ng-show="ordine.letteraDiVettura != undefined">Lettera di Vettura: {{ordine.letteraDiVettura}}</span></p>
+				<p><span data-ng-show="ordine.contrassegno.tipo != undefined && ordine.contrassegno.tipo.length > 0">Contrassegno: {{ordine.contrassegno.valore}} &euro; Tipo Incasso: {{ordine.contrassegno.tipo}}</span></p>
+				<h2 data-ng-show="ordine.note != undefined && ordine.note.length > 0">Note</h2>
+				<p data-ng-show="ordine.note != undefined && ordine.note.length > 0">{{ordine.note}}</p>
+			</div>
+			<br/>
+			<div class="well bianco centrato">
+				<h2>TRACKING</h2>
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-sm-3"><h3>DATA</h3></div>
+						<div class="col-sm-4"><h3>STATO</h3></div>
+						<div class="col-sm-5"><h3>DESCRIZIONE</h3></div>
+					</div>
+					<div class="row" data-ng-repeat="item in ordine.tracking">
+						<div class="col-sm-3"><span>{{item.data}}</span></div>
+						<div class="col-sm-4"><span>{{item.stato}}</span></div>
+						<div class="col-sm-5"><span>{{item.descrizione}}</span></div>
+					</div>
+				</div>
+			</div>
+			<br/>
+			<button type="button" class="btn bottone sinistra" data-ng-click="indietro()">Indietro</button>
+			<span class="spacer sinistra">&nbsp;</span>
+			<button type="button" class="btn bottone sinistra" data-toggle="tooltip" data-placement="top" title="Archivia questo ordine, potrai trovarlo nello storico." data-ng-click="archivia()">Archivia</button>
+			<br/>
+			<br/>
+		</div>
+		<div class="col-sm-1"></div>
+	</div>
+</div>

@@ -1,0 +1,118 @@
+<script src="resources/js/dateCustom.js"></script>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-2" data-ng-include="'resources/html/partial/menu.html'"></div>
+		<div class="col-sm-1"></div>
+		<div class="col-sm-8">
+			<h1>Cerca Ordine</h1>
+			<p>Per visualizzare l&#39;elenco degli ordini interessati clicca il pulsante Cerca.</p>
+			<p>Per velocizzare la tua ricerca puoi inserire dei criteri di filtraggio.</p>
+			
+			<form name="ricerca" novalidate>
+			<div id="form" class="container-fluid collapse in">
+			
+				<div class="row" data-ng-show="mostraCliente">
+					<div class="col-sm-5 form-group">
+						<label for="cliente">Cliente:</label>
+						<select class="form-control" name="cliente" id="cliente" data-ng-model="cliente" data-ng-options="item.nome for item in clienti">
+						</select>
+					</div>
+					<div class="col-sm-1"></div>
+					<div class="col-sm-5 form-group">
+						<label for="nrLista">Numero lista:</label>
+						<input class="form-control" type="text" name="nrLista" data-ng-model="nrLista"/>
+					</div>
+					<div class="col-sm-1"></div>
+				</div>
+				
+				<div class="row form-group">
+					<div class="col-sm-5 form-group">
+						<label for="nOrdine">N&deg; Ordine:</label>
+						<input class="form-control" type="text" name="nOrdine" data-ng-model="nOrdine"/>
+					</div>
+					<div class="col-sm-1"></div>
+					<div class="col-sm-5 form-group">
+						<label for="ddt">DDT o Fattura accompagnatoria:</label>
+						<input class="form-control" type="text" name="ddt" data-ng-model="ddt"/>
+					</div>
+					<div class="col-sm-1"></div>
+				</div>
+				
+				<div class="row">
+					<div class="col-sm-5 form-group">
+						<label for="dataDa">Data da:</label>
+						<input id="dpd1" class="form-control" type="text" name="dataDa" data-ng-model="dataDa" placeholder="gg/mm/aaaa"/>
+					</div>
+					<div class="col-sm-1"></div>
+					<div class="col-sm-5 form-group">
+						<label for="dataA">a:</label>
+						<input id="dpd2" class="form-control" type="text" name="dataA" data-ng-model="dataA" placeholder="gg/mm/aaaa"/>
+					</div>
+					<div class="col-sm-1"></div>
+				</div>
+				
+				<div class="row">
+					<div class="col-sm-5 form-group">
+						<label for="destinatario">Ragione sociale destinatario:</label>
+						<input class="form-control" type="text" name="destinatario" data-ng-model="destinatario"/>
+					</div>
+					<div class="col-sm-1"></div>
+					<div class="col-sm-5 form-group">
+						<label for="stato">Stato:</label>
+						<select class="form-control" name="stato" id="stato" data-ng-model="stato">
+						   	<option value="" >...</option>
+						   	<option value="L01">Ricezione Ordine</option>
+						   	<option value="L02">Picking e Imballaggio</option>
+						   	<option value="L03">richiesta spedizione</option>
+						   	<option value="L04">Consegnato al Corriere</option>
+						   	<option value="" class="separator" disabled></option>
+						   	<option value="S01">Spedizione Presa in Carico dal Corriere</option>
+						   	<option value="S02">Spedizione in Consegna</option>
+						   	<option value="S03">Spedizione Consegnata</option>
+						   	<option value="" class="separator" disabled></option>
+						   	<option value="C01">Giacenza</option>
+						   	<option value="C02">Spedizione non Ritirata o Respinta</option>
+						   	<option value="C03">Spedizione in Fermo Deposito</option>
+						   	<option value="C04">In Attesa di Verifica</option>
+						   	<option value="C05">Lasciato Avviso</option>
+						   	<option value="C06">Spedizione Annullata</option>
+						   	<option value="C07">Disguidato</option>
+						</select>
+					</div>
+					<div class="col-sm-1"></div>
+				</div>
+			
+			</div>
+			<button id="bottoneRicerca" type="button" class="btn bottone sinistra" data-ng-click="cerca()">Cerca</button>
+			</form>
+			<br/>
+			<br/>
+			<p class="errore">{{message}}</p>
+			<br/>
+			<table class="lista" data-at-table data-at-paginated data-at-list="ordini" data-at-config="configurazioneTabella">
+				<thead>
+					<tr class="lista">
+						<th class="lista" data-at-attribute="nOrdine">Riferimento</th>
+						<th class="lista" data-at-attribute="data">Data</th>
+						<th class="lista" data-at-attribute="stato">Stato</th>
+						<th class="lista" data-at-attribute="destinatario">Destinatario</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="lista" data-ng-click="visualizzaDettaglio(item.id)">
+						<td class="lista" data-at-attribute="riferimentoCliente" data-at-implicit data-at-sortable></td>
+						<td class="lista" data-at-attribute="dataPartenza" data-at-implicit data-at-sortable data-at-initial-sorting="desc"></td>
+						<td class="lista" data-at-attribute="stato" data-at-implicit data-at-sortable></td>
+						<td class="lista" data-at-attribute="ragioneSocialeDestinatario" data-at-implicit data-at-sortable></td>
+					</tr>
+				</tbody>
+			</table>
+			<at-pagination data-at-list="ordini" data-at-config="configurazioneTabella"></at-pagination>
+			<br/>
+			<br/>
+		</div>
+		<div class="col-sm-1"></div>
+	</div>
+</div>
+

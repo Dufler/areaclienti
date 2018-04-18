@@ -1,0 +1,39 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-2" data-ng-include="'resources/html/partial/menu.html'"></div>
+		<div class="col-sm-1"></div>
+		<div class="col-sm-7">
+			<h1>Preferenze</h1>
+			<p>Qui puoi personalizzare il tuo account.</p>
+			<p>Questa parte del sito &egrave; ancora in costruzione.</p>
+			<h2>Cambio password</h2>
+			<p>Inserisci una nuova password</p>
+			<p>{{message}}</p>
+			<form novalidate>
+				<div id="form" class="container-fluid">
+					<div class="row">
+						<div class="col-sm-6 form-group">
+							<label for="password">Nuova Password:</label>
+							<input class="form-control" type="password" name="password" data-ng-model="password"/>
+						</div>
+						<div class="col-sm-6"></div>
+					</div>
+					<div class="row">
+						<div class="col-sm-6 form-group">
+							<label for="password2">Conferma Password:</label>
+							<input class="form-control" type="password" name="password2" data-ng-model="password2"/>
+						</div>
+						<div class="col-sm-6"></div>
+					</div>
+				</div>
+				<button type="button" class="btn bottone sinistra" data-ng-disabled="password != password2" data-ng-click="cambia()">Cambia Password</button>
+			</form>
+			<br>
+			<br>
+			<h2>Guida</h2>
+			<p>Qui puoi scaricare una guida in pdf all'utilizzo del sito web.</p>
+			<a target="_blank" href="resources/pdf/GuidaMonitoraggioOrdini.pdf">Guida PDF</a>
+		</div>
+		<div class="col-sm-1"></div>
+	</div>
+</div>

@@ -1,0 +1,8 @@
+<header>
+	<div class="bianco larghezzamax">
+		<img class="centrato header" src="resources/images/logoScuro.png" />
+	</div>
+	<div class="giallo larghezzamax">
+		<p class="header" align="center"><strong>l&amp;tc</strong>, il tuo partner in logistica.</p>
+	</div>
+</header>

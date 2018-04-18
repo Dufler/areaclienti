@@ -1,0 +1,22 @@
+<br />
+<br />
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-4"></div>
+		<div class="well col-sm-4 bianco centrato">
+			<br />
+			<form name="resetPasswordForm" action="reimposta" method="POST">
+				<div class="form-group">
+					<label for="mail">Inserisci la tua email:</label>
+					<input class="form-control logininput" type="email" name="mail" data-ng-model="mail"/>
+				</div>
+				<br/>
+				<button class="btn bottone destra" data-ng-disabled="resetPasswordForm.mail.$invalid">Invia</button>
+				<p>
+					<a class="login" href="#login">Torna alla pagina di login</a>
+				</p>
+			</form>
+		</div>
+		<div class="col-sm-4"></div>
+	</div>
+</div>

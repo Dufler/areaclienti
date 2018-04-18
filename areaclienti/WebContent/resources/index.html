@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html data-ng-app="ltcApp">
+<head>
+	<meta charset="ISO-8859-1">
+	<link rel="shortcut icon" href="resources/images/ltc_logo_16x16.png" />
+	<title>LTC - Area Clienti</title>
+	<!-- Fogli di stile -->
+	<link rel="stylesheet" href="resources/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="resources/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="resources/css/datepicker.css" />
+	<link rel="stylesheet" href="resources/css/style.css" />
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+	<!-- Javascript -->
+	<script src="resources/js/jquery.min.js"></script>
+	<script src="resources/js/bootstrap.min.js"></script>
+	<script src="resources/js/angular.min.js"></script>
+    <script src="resources/js/angular-route.js"></script>
+    <script src="resources/js/angular-table.min.js"></script>
+    <script src="resources/js/angular-tabs.min.js"></script>
+    <script src="resources/js/bootstrap-datepicker.js"></script>
+    <script src="resources/js/script.js"></script>
+</head>
+<body data-ng-controller="mainController">
+	<div class="header" data-ng-include="'resources/html/partial/header.html'"></div>
+	<div id="main" class="main grigiochiaro"><div data-ng-view></div></div>
+	<div class="footer grigioscuro" data-ng-include="'resources/html/partial/footer.html'"></div>		
+</body>
+</html>

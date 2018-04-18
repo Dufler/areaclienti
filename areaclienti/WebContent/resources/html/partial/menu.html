@@ -1,0 +1,23 @@
+<div class="well grigio menu sinistra" data-ng-controller="menuController">
+	<h1 class="menuheading">ATTIVIT&Agrave;</h1>
+	<ul>
+<!-- 	<li><button data-target="#menucarichi" data-toggle="collapse" class="btn btn-link menulink">Carichi</button></li> -->
+<!-- 	<li> -->
+<!-- 	<ul id="menucarichi" class="collapse"> -->
+<!-- 		<li><a class="menulink" href="#nuovocarico">Nuovo carico</a></li> -->
+<!-- 		<li><a class="menulink" href="#listacarichi">Cerca carico</a></li> -->
+<!-- 		<li><a class="menulink" href="#storicocarichi">Storico carichi</a></li> -->
+<!-- 	</ul> -->
+<!-- 	</li> -->
+	<li><button data-target="#menuordini" data-toggle="collapse" class="btn btn-link menulink">Tracking</button></li>
+	<li>
+	<ul id="menuordini" class="collapse">
+		<li><a class="menulink" href="#lista">Cerca Ordine</a></li>
+		<li><a class="menulink" href="#storico">Storico Ordini</a></li>
+	</ul>
+	</li>
+	<li><a class="menulink" href="#preferenze">Preferenze</a></li>
+	</ul>
+	<p>{{message}}</p>
+	<button class="btn bottone destra" data-ng-click="logout()">Logout</button>
+</div>
